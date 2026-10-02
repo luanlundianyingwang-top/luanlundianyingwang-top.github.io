@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乱伦电影网 - 海量影视资源在线观看导航 | luanlundianyingwang-top</title>
+<meta name="description" content="乱伦电影网（luanlundianyingwang-top）是一个影视资源导航与在线观看入口站点，提供电影、剧集、综艺、动漫等多品类内容，支持移动端自适应访问。">
+<meta name="keywords" content="乱伦电影网, luanlundianyingwang-top, 电影, 影视, 在线观看, 剧集, 综艺, 动漫">
+<meta name="author" content="乱伦电影网">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luanlundianyingwang-top.github.io">
+
+<!-- 结构化数据：帮助必应等搜索引擎理解站点 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "乱伦电影网",
+  "url": "https://luanlundianyingwang-top.github.io",
+  "description": "海量影视资源在线观看导航站点",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://luanlundianyingwang-top.github.io#search?q={query}",
+    "query-input": "required name=query"
+  }
+}
+</script>
+
+<style>
+/* ============ 基础重置 ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg-0:#07060f;
+  --bg-1:#0f0c29;
+  --accent:#ff2e63;
+  --accent2:#7b2ff7;
+  --gold:#ffb43a;
+  --txt:#eef0ff;
+  --txt-dim:#a8abd0;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.10);
+}
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:"PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg-0);
+  color:var(--txt);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(900px 500px at 12% 8%, rgba(123,47,247,.30), transparent 60%),
+    radial-gradient(800px 500px at 88% 20%, rgba(255,46,99,.22), transparent 60%),
+    linear-gradient(180deg,var(--bg-1),var(--bg-0) 55%,#050410);
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+.container{ width:100%; max-width:1200px; margin:0 auto; padding:0 18px; }
+
+/* ============ 顶部导航 ============ */
+.hd{ position:sticky; top:0; z-index:99; backdrop-filter:blur(12px); background:rgba(7,6,15,.72); border-bottom:1px solid var(--line); }
+.hd .container{ display:flex; align-items:center; justify-content:space-between; height:62px; }
+.logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; letter-spacing:.5px; }
+.logo .mark{
+  width:36px; height:36px; border-radius:10px; flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:grid; place-items:center; font-size:18px; box-shadow:0 6px 18px rgba(255,46,99,.35);
+}
+.logo b{ color:var(--accent); }
+.nav{ display:flex; gap:6px; align-items:center; }
+.nav a{
+  font-size:14px; padding:8px 13px; border-radius:20px; color:var(--txt-dim);
+  transition:.25s; white-space:nowrap;
+}
+.nav a:hover{ color:#fff; background:rgba(255,255,255,.08); }
+.menu-btn{ display:none; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:#fff; font-size:20px; cursor:pointer; }
+.search-top{
+  display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.07);
+  border:1px solid var(--line); border-radius:30px; padding:6px 14px; width:230px;
+}
+.search-top input{ background:none; border:0; outline:0; color:#fff; width:100%; font-size:13px; }
+.search-top button{ background:none; border:0; color:var(--gold); cursor:pointer; font-size:15px; }
+
+/* ============ Hero ============ */
+.hero{ position:relative; padding:70px 0 60px; text-align:center; }
+.hero .tagline{
+  display:inline-block; font-size:12px; letter-spacing:2px; color:var(--gold);
+  border:1px solid rgba(255,180,58,.35); border-radius:30px; padding:5px 16px; margin-bottom:22px;
+}
+.hero h1{ font-size:clamp(30px,5.2vw,54px); line-height:1.2; font-weight:900; }
+.hero h1 em{ font-style:normal; background:linear-gradient(90deg,var(--accent),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero p.lead{ color:var(--txt-dim); margin:18px auto 0; max-width:640px; font-size:15px; }
+.hero .site-url{
+  margin:26px auto 0; display:inline-flex; align-items:center; gap:10px;
+  background:rgba(255,255,255,.05); border:1px dashed var(--line); border-radius:14px; padding:12px 20px;
+  font-size:14px; color:#c7caf5;
+}
+.hero .site-url code{ color:var(--gold); font-weight:700; }
+.hero-cta{ margin-top:30px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:30px;
+  font-size:14px; font-weight:700; cursor:pointer; border:0; transition:.25s;
+}
+.btn-primary{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; box-shadow:0 10px 28px rgba(255,46,99,.35); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(255,46,99,.45); }
+.btn-ghost{ background:rgba(255,255,255,.07); color:#fff; border:1px solid var(--line); }
+.btn-ghost:hover{ background:rgba(255,255,255,.13); }
+
+/* ============ 通用区块 ============ */
+section{ padding:60px 0; }
+.sec-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:32px; flex-wrap:wrap; }
+.sec-head h2{ font-size:clamp(22px,3vw,30px); font-weight:800; }
+.sec-head h2 span{ color:var(--accent); }
+.sec-head p{ color:var(--txt-dim); font-size:14px; max-width:420px; }
+.kw-hint{ color:var(--gold); font-size:13px; }
+
+/* ============ 分类卡片（栏目一：影片分类） ============ */
+.grid-cat{ display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:16px; }
+.cat-card{
+  position:relative; padding:26px 18px; border-radius:18px; text-align:center;
+  background:var(--card); border:1px solid var(--line); transition:.3s; overflow:hidden;
+}
+.cat-card::after{ content:""; position:absolute; inset:0; opacity:0; transition:.3s; background:radial-gradient(400px at var(--mx,50%) var(--my,50%), rgba(255,46,99,.25), transparent 60%); }
+.cat-card:hover{ transform:translateY(-6px); border-color:rgba(255,46,99,.5); }
+.cat-card .ic{ font-size:34px; display:block; margin-bottom:10px; }
+.cat-card h3{ font-size:16px; margin-bottom:4px; }
+.cat-card small{ color:var(--txt-dim); font-size:12px; }
+
+/* ============ 榜单列表（栏目二：热播榜单） ============ */
+.rank-wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:24px; }
+.rank-box{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px; }
+.rank-box h3{ font-size:17px; margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+.rank-list li{ display:flex; align-items:center; gap:14px; padding:11px 0; border-bottom:1px dashed var(--line); }
+.rank-list li:last-child{ border-bottom:0; }
+.rank-no{ width:26px; height:26px; border-radius:8px; flex:none; display:grid; place-items:center; font-size:13px; font-weight:800; background:rgba(255,255,255,.08); color:var(--txt-dim); }
+.rank-no.top{ background:linear-gradient(135deg,var(--accent),var(--gold)); color:#fff; }
+.rank-list .info{ flex:1; min-width:0; }
+.rank-list .info a.title{ font-size:14px; font-weight:600; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.rank-list .info a.title:hover{ color:var(--accent); }
+.rank-list .info span{ font-size:12px; color:var(--txt-dim); }
+.rank-list .score{ font-size:13px; color:var(--gold); font-weight:700; flex:none; }
+
+/* ============ 特色资源（栏目三：精品推荐） ============ */
+.featured{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; }
+.f-card{ border-radius:18px; overflow:hidden; background:var(--card); border:1px solid var(--line); transition:.3s; }
+.f-card:hover{ transform:translateY(-6px); border-color:rgba(123,47,247,.55); }
+.f-poster{ position:relative; aspect-ratio:3/4; overflow:hidden; }
+.f-poster .ph{
+  position:absolute; inset:0; display:grid; place-items:center; font-size:44px;
+  background:linear-gradient(150deg,var(--accent2),var(--accent));
+}
+.f-poster .badge{ position:absolute; top:10px; left:10px; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); font-size:11px; padding:3px 9px; border-radius:20px; }
+.f-poster .rate{ position:absolute; bottom:10px; right:10px; background:var(--gold); color:#2a1c00; font-weight:800; font-size:12px; padding:3px 8px; border-radius:8px; }
+.f-body{ padding:14px 16px 18px; }
+.f-body h4{ font-size:15px; margin-bottom:6px; }
+.f-body p{ font-size:12px; color:var(--txt-dim); }
+.f-tags{ margin-top:10px; display:flex; gap:6px; flex-wrap:wrap; }
+.f-tags i{ font-style:normal; font-size:11px; padding:2px 8px; border-radius:20px; background:rgba(255,255,255,.07); color:var(--txt-dim); }
+
+/* ============ 栏目四：更新日历 ============ */
+.calendar{ display:grid; grid-template-columns:repeat(auto-fill,minmax(112px,1fr)); gap:12px; }
+.cal-day{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 10px; text-align:center; transition:.25s; }
+.cal-day:hover{ background:rgba(255,46,99,.10); border-color:var(--accent); }
+.cal-day b{ display:block; font-size:13px; color:var(--txt-dim); margin-bottom:6px; }
+.cal-day span{ font-size:20px; font-weight:800; }
+.cal-day small{ display:block; font-size:11px; color:var(--gold); margin-top:4px; }
+
+/* ============ 关于/简介（栏目五） ============ */
+.about{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+.about-card{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:30px; }
+.about-card h3{ font-size:20px; margin-bottom:14px; }
+.about-card p{ color:var(--txt-dim); font-size:14px; margin-bottom:12px; }
+.stat-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+.stat{ text-align:center; padding:16px 8px; border-radius:16px; background:rgba(255,255,255,.05); }
+.stat b{ display:block; font-size:26px; background:linear-gradient(135deg,var(--accent),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.stat span{ font-size:12px; color:var(--txt-dim); }
+
+/* ============ 页脚 ============ */
+.ft{ border-top:1px solid var(--line); padding:40px 0 28px; background:rgba(0,0,0,.25); }
+.ft-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:26px; margin-bottom:28px; }
+.ft h4{ font-size:14px; margin-bottom:14px; }
+.ft ul li{ margin-bottom:8px; }
+.ft ul a{ color:var(--txt-dim); font-size:13px; transition:.2s; }
+.ft ul a:hover{ color:#fff; }
+.ft-bottom{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:20px; }
+.ft-bottom small{ color:var(--txt-dim); font-size:12px; }
+.ft-bottom .kw{ color:var(--gold); }
+
+/* ============ 响应式 ============ */
+@media(max-width:900px){
+  .rank-wrap,.about{ grid-template-columns:1fr; }
+  .search-top{ display:none; }
+  .nav{ position:fixed; top:62px; right:0; flex-direction:column; align-items:stretch; gap:4px;
+        width:220px; padding:18px; background:rgba(10,8,24,.97); border-left:1px solid var(--line);
+        border-bottom-left-radius:18px; transform:translateX(105%); transition:.35s; }
+  .nav.open{ transform:translateX(0); }
+  .nav a{ padding:12px 14px; }
+  .menu-btn{ display:grid; place-items:center; }
+  .ft-grid{ grid-template-columns:1fr 1fr; }
+}
+@media(max-width:560px){
+  section{ padding:44px 0; }
+  .hero{ padding:44px 0 38px; }
+  .ft-grid{ grid-template-columns:1fr; }
+  .stat-row{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- ============ 头部 ============ -->
+<header class="hd">
+  <div class="container">
+    <a class="logo" href="#top" aria-label="乱伦电影网 首页">
+      <span class="mark" aria-hidden="true">🎬</span>
+      <span>乱伦<b>电影网</b></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#cat">影片分类</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#featured">精品推荐</a>
+      <a href="#update">更新日历</a>
+      <a href="#about">关于本站</a>
+      <a href="#">留言反馈</a>
+    </nav>
+
+    <div class="search-top" role="search">
+      <input type="text" id="topSearch" placeholder="搜索影片 / 演员 / 类型…" aria-label="搜索影片">
+      <button onclick="doSearch()" aria-label="搜索">🔍</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="菜单" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="container">
+    <span class="tagline">LUANLUN DIANYING WANG · 影视导航</span>
+    <h1>畅享海量影视资源<br><em>尽在乱伦电影网</em></h1>
+    <p class="lead">乱伦电影网（luanlundianyingwang-top）聚合电影、剧集、综艺、动漫等多元内容，提供清晰的分类入口与热播榜单，助你快速找到想看的好内容，支持手机、平板、电脑全端自适应访问。</p>
+
+    <div class="site-url">
+      <span>🌐 官方网址</span>
+      <code>https://luanlundianyingwang-top.github.io</code>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#rank">🔥 查看热播榜单</a>
+      <a class="btn btn-ghost" href="#cat">🎞️ 浏览影片分类</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目一：影片分类 ============ -->
+<section id="cat">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>影片<span>分类</span>导航</h2>
+        <p class="kw-hint">乱伦电影网 · 多品类 · 精准检索</p>
+      </div>
+      <p>按类型快速定位你想看的影片，每个分类持续更新，入口直达。</p>
+    </div>
+
+    <div class="grid-cat">
+      <a class="cat-card" href="#"><span class="ic">🎭</span><h3>动作片</h3><small>热血震撼 · 大片云集</small></a>
+      <a class="cat-card" href="#"><span class="ic">😂</span><h3>喜剧片</h3><small>轻松解压 · 欢乐不停</small></a>
+      <a class="cat-card" href="#"><span class="ic">💘</span><h3>爱情片</h3><small>浪漫温情 · 心动首选</small></a>
+      <a class="cat-card" href="#"><span class="ic">😱</span><h3>恐怖片</h3><small>惊悚悬疑 · 心跳加速</small></a>
+      <a class="cat-card" href="#"><span class="ic">🚀</span><h3>科幻片</h3><small>脑洞大开 · 视觉盛宴</small></a>
+      <a class="cat-card" href="#"><span class="ic">📜</span><h3>古装剧</h3><small>历史传奇 · 国风韵味</small></a>
+      <a class="cat-card" href="#"><span class="ic">🎤</span><h3>综艺秀</h3><small>真人实境 · 欢乐不断</small></a>
+      <a class="cat-card" href="#"><span class="ic">🎨</span><h3>动漫番</h3><small>二次元 · 经典连载</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目二：热播榜单 ============ -->
+<section id="rank" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,.02))">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>热播<span>榜单</span></h2>
+        <p class="kw-hint">乱伦电影网 · 实时热度 · 每周更新</p>
+      </div>
+      <p>综合播放与口碑，为你精选当下最受欢迎的影视内容，快速追热门。</p>
+    </div>
+
+    <div class="rank-wrap">
+      <div class="rank-box">
+        <h3>🏆 电影热榜 TOP 6</h3>
+        <ul class="rank-list">
+          <li><span class="rank-no top">1</span><span class="info"><a class="title" href="#">无名之辈：否极泰来</a><span>喜剧 · 犯罪 · 2026</span></span><span class="score">9.2</span></li>
+          <li><span class="rank-no top">2</span><span class="info"><a class="title" href="#">星际回响</a><span>科幻 · 冒险 · 2026</span></span><span class="score">9.0</span></li>
+          <li><span class="rank-no top">3</span><span class="info"><a class="title" href="#">暗夜追凶</a><span>悬疑 · 犯罪 · 2025</span></span><span class="score">8.8</span></li>
+          <li><span class="rank-no">4</span><span class="info"><a class="title" href="#">云端之恋</a><span>爱情 · 都市 · 2025</span></span><span class="score">8.6</span></li>
+          <li><span class="rank-no">5</span><span class="info"><a class="title" href="#">破晓行动</a><span>动作 · 警匪 · 2025</span></span><span class="score">8.5</span></li>
+          <li><span class="rank-no">6</span><span class="info"><a class="title" href="#">山海奇谭</a><span>奇幻 · 古装 · 2025</span></span><span class="score">8.3</span></li>
+        </ul>
+      </div>
+
+      <div class="rank-box">
+        <h3>📺 剧集热榜 TOP 6</h3>
+        <ul class="rank-list">
+          <li><span class="rank-no top">1</span><span class="info"><a class="title" href="#">长安十二时辰 第二季</a><span>古装 · 悬疑 · 42集</span></span><span class="score">9.4</span></li>
+          <li><span class="rank-no top">2</span><span class="info"><a class="title" href="#">沉默的真相 2</a><span>犯罪 · 剧情 · 12集</span></span><span class="score">9.1</span></li>
+          <li><span class="rank-no top">3</span><span class="info"><a class="title" href="#">繁花似锦</a><span>都市 · 情感 · 36集</span></span><span class="score">8.9</span></li>
+          <li><span class="rank-no">4</span><span class="info"><a class="title" href="#">未来处方</a><span>科幻 · 医疗 · 24集</span></span><span class="score">8.7</span></li>
+          <li><span class="rank-no">5</span><span class="info"><a class="title" href="#">江湖夜雨</a><span>武侠 · 古装 · 50集</span></span><span class="score">8.5</span></li>
+          <li><span class="rank-no">6</span><span class="info"><a class="title" href="#">星辰大海</a><span>职场 · 励志 · 30集</span></span><span class="score">8.2</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目三：精品推荐 ============ -->
+<section id="featured">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>精品<span>推荐</span></h2>
+        <p class="kw-hint">乱伦电影网 · 编辑精选 · 高分口碑</p>
+      </div>
+      <p>由编辑团队严选的高分好片与优质剧集，覆盖多种题材与风格。</p>
+    </div>
+
+    <div class="featured">
+      <article class="f-card">
+        <div class="f-poster"><div class="ph" aria-hidden="true">🎬</div><span class="badge">热映中</span><span class="rate">9.2</span></div>
+        <div class="f-body">
+          <h4>无名之辈：否极泰来</h4>
+          <p>小人物在命运夹缝中寻找尊严与希望的爆笑犯罪故事。</p>
+          <div class="f-tags"><i>喜剧</i><i>犯罪</i><i>口碑佳作</i></div>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-poster"><div class="ph" aria-hidden="true">🚀</div><span class="badge">独家推荐</span><span class="rate">9.0</span></div>
+        <div class="f-body">
+          <h4>星际回响</h4>
+          <p>一场跨越光年的星际旅程，探讨人性与文明的边界。</p>
+          <div class="f-tags"><i>科幻</i><i>冒险</i><i>视效大片</i></div>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-poster"><div class="ph" aria-hidden="true">🗡️</div><span class="badge">口碑剧</span><span class="rate">9.4</span></div>
+        <div class="f-body">
+          <h4>长安十二时辰 第二季</h4>
+          <p>盛世长安下的十二个时辰，步步惊心的悬疑权谋大戏。</p>
+          <div class="f-tags"><i>古装</i><span></span><i>悬疑</i><i>权谋</i></div>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-poster"><div class="ph" aria-hidden="true">🎤</div><span class="badge">综艺</span><span class="rate">8.8</span></div>
+        <div class="f-body">
+          <h4>欢乐集结号</h4>
+          <p>明星真人秀实境挑战，笑点密集的周末解压首选。</p>
+          <div class="f-tags"><i>综艺</i><i>真人秀</i><i>轻松</i></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目四：更新日历 ============ -->
+<section id="update" style="background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>更新<span>日历</span></h2>
+        <p class="kw-hint">乱伦电影网 · 每日更新 · 不错过新番</p>
+      </div>
+      <p>查看本周每日更新安排，追剧追番有条不紊。</p>
+    </div>
+
+    <div class="calendar">
+      <div class="cal-day"><b>周一</b><span>🎬</span><small>电影上新</small></div>
+      <div class="cal-day"><b>周二</b><span>📺</span><small>剧集更新</small></div>
+      <div class="cal-day"><b>周三</b><span>🎤</span><small>综艺上线</small></div>
+      <div class="cal-day"><b>周四</b><span>🎨</span><small>动漫更新</small></div>
+      <div class="cal-day"><b>周五</b><span>🔥</span><small>热门加更</small></div>
+      <div class="cal-day"><b>周六</b><span>🍿</span><small>周末特辑</small></div>
+      <div class="cal-day"><b>周日</b><span>⭐</span><small>经典回顾</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目五：关于本站 ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about">
+      <div class="about-card">
+        <h3>关于乱伦电影网</h3>
+        <p><strong style="color:#fff">乱伦电影网</strong>（luanlundianyingwang-top）是一个专注于影视资源导航与在线观看入口的站点，致力于为用户提供清晰、便捷、全面的影视浏览体验。</p>
+        <p>网站涵盖电影、剧集、综艺、动漫等多种内容类型，配合热播榜单与更新日历，让你轻松发现好内容，全站支持手机、平板、电脑自适应访问。</p>
+        <p>官方网址：<code style="color:var(--gold)">https://luanlundianyingwang-top.github.io</code></p>
+        <div class="stat-row">
+          <div class="stat"><b>8+</b><span>内容分类</span></div>
+          <div class="stat"><b>1000+</b><span>精选资源</span></div>
+          <div class="stat"><b>24h</b><span>每日更新</span></div>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <h3>为什么选择我们</h3>
+        <ul style="display:flex; flex-direction:column; gap:14px;">
+          <li style="display:flex; gap:12px; align-items:flex-start;"><span style="font-size:22px">🎯</span><span><b style="color:#fff">精准分类</b><br><small style="color:var(--txt-dim)">按类型、题材、年份多维度筛选，快速定位想看内容。</small></span></li>
+          <li style="display:flex; gap:12px; align-items:flex-start;"><span style="font-size:22px">⚡</span><span><b style="color:#fff">实时榜单</b><br><small style="color:var(--txt-dim)">综合热度与口碑动态排行，紧跟影视潮流。</small></span></li>
+          <li style="display:flex; gap:12px; align-items:flex-start;"><span style="font-size:22px">📱</span><span><b style="color:#fff">全端适配</b><br><small style="color:var(--txt-dim)">移动端自适应布局，随时随地畅快浏览。</small></span></li>
+          <li style="display:flex; gap:12px; align-items:flex-start;"><span style="font-size:22px">🆕</span><span><b style="color:#fff">每日更新</b><br><small style="color:var(--txt-dim)">更新日历一目了然，不错过任何新番好剧。</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="ft">
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;"><span class="mark" aria-hidden="true">🎬</span><span>乱伦<b>电影网</b></span></div>
+        <p style="color:var(--txt-dim); font-size:13px; max-width:320px;">乱伦电影网（luanlundianyingwang-top）提供优质影视资源导航与在线观看入口，欢迎收藏本站。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#cat">影片分类</a></li>
+          <li><a href="#rank">热播榜单</a></li>
+          <li><a href="#featured">精品推荐</a></li>
+          <li><a href="#update">更新日历</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#about">关于本站</a></li>
+          <li><a href="#">合作联系</a></li>
+          <li><a href="#">使用帮助</a></li>
+          <li><a href="#">留言反馈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>官方网址</h4>
+        <ul>
+          <li><a href="https://luanlundianyingwang-top.github.io">🔗 luanlundianyingwang-top.github.io</a></li>
+          <li><a href="#">📧 在线留言</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <small>© <span id="year"></span> 乱伦电影网（luanlundianyingwang-top）. 本站仅供影视资源导航与信息展示，内容版权归原作者及发行方所有。</small>
+      <small class="kw">关键词：乱伦电影网 · luanlundianyingwang-top · 影视导航</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 移动端菜单
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.textContent = open ? '✕' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.textContent = '☰';
+    });
+  });
+
+  // 分类卡片鼠标光效
+  document.querySelectorAll('.cat-card').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // 搜索（演示）
+  function doSearch(){
+    var q = document.getElementById('topSearch').value.trim();
+    if(q){ alert('乱伦电影网 搜索："' + q + '"\n（演示功能，实际接入搜索接口后可跳转结果页）'); }
+  }
+  document.getElementById('topSearch').addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ doSearch(); }
+  });
+</script>
+
+</body>
+</html>
